@@ -3,7 +3,6 @@ package aula01_exercicios_revisao;
 import utils.ArrayUtils;
 
 public class ExerciciosRevisao {
-
     public static void main(String[] args) {
         System.out.println(ex01_stringInteiros0n(5));
         ArrayUtils.imprimir(ex02_arrayInteiros0n(10));
