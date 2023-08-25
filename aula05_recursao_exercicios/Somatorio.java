@@ -2,7 +2,9 @@ package aula05_recursao_exercicios;
 
 public class Somatorio {
     public static void main(String[] args) {
-        int n=5;
+        int n=7;
+        System.out.println(somatorioRecursivoN_0(n));
+        /*
         System.out.println("somatorioNaoRecursivoN_0(" + n + "): " + somatorioNaoRecursivoN_0(n));
         System.out.println("somatorioNaoRecursivo0_N(" + n + "): " + somatorioNaoRecursivo0_N(n));
 
@@ -13,6 +15,7 @@ public class Somatorio {
         System.out.println("");
         System.out.println("somatorioRecursivoN_0(" + n + "): ");
         System.out.println(somatorioRecursivoN_0(0, n));
+*/
 
     }
     public static int somatorioNaoRecursivoN_0(int n) {
@@ -35,14 +38,27 @@ public class Somatorio {
         return r;
     }
     public static int somatorioRecursivo0_N(int n) {
-        System.out.println("IMPLEMENTAR...");
-        return -1;
-
+       //
+        return 0;
     }
-    public static int somatorioRecursivoN_0(int i, int n) {
-        System.out.println("IMPLEMENTAR...");
-        return -1;
 
+
+
+
+    public static int somatorioRecursivoN_0(int n) {
+        if(n==0) return 0;
+        else return n + somatorioRecursivoN_0(n - 1);
     }
+
+
+
+
+
+
+
+
+
+
+
 
 }

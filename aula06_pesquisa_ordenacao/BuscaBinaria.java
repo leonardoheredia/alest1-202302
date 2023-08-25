@@ -8,8 +8,8 @@ public class BuscaBinaria {
 
     public static void main(String[] args) {
         //int[] a = {5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
-        int[] a = new int[21];
-        ArrayUtils.preencherArrayComValoresInteirosAleatorios(a, 100, false);
+        int[] a = new int[1_000];
+        ArrayUtils.preencherArrayComValoresInteirosAleatorios(a, 10_000, false);
         MergeSort ms = new MergeSort();
         ms.ordenar(a);
         boolean b = buscaBinariaNaoRecursiva(a, 68);
