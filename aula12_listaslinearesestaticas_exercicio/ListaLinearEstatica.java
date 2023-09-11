@@ -44,6 +44,9 @@ public class ListaLinearEstatica {
         //IMPLEMENTAR
     }
 
+    public void mergear(ListaLinearEstatica lista) {
+        //IMPLEMENTAR
+    }
 
 }
 
