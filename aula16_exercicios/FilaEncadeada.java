@@ -19,12 +19,8 @@ public class FilaEncadeada {
         //implementar
     }
     public String desenfileirar() {
-        String r;
-        r = primeiro.item;
-        primeiro.proximo.anterior = null;
-        primeiro = primeiro.proximo;
-        quantidade--;
-        return r;
+        //implementar
+        return null;
     }
     public boolean estaVazia() {
         //implementar
