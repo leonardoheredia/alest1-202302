@@ -1,4 +1,4 @@
-package aula_14_filas_pilhas.pilhas_alocacao_dinamica;
+package aula14_filas_pilhas.pilhas_alocacao_dinamica;
 
 public class PilhaDinamica {
     private class Nodo {

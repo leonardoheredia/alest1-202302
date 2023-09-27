@@ -1,4 +1,4 @@
-package aula_15_exercicios;
+package aula15_exercicios;
 
 public class ListaDuplamenteEncadeada {
     private class Nodo {
@@ -31,6 +31,35 @@ public class ListaDuplamenteEncadeada {
         fim.anterior = n;
         quantidade++;
     }
+    public int buscar2(String item) {
+        Nodo n = inicio.proximo;
+        for (int i = 0; i < quantidade; i++) {
+            if(n.item.equals(item)) return i;
+            n = n.proximo;
+        }
+        return -1;
+    }
+    public int buscar(String item) {
+        //retorna a posicao do elemento item na lista, iniciando em zero
+        //se o item nao existir retorna -1
+        Nodo n = inicio.proximo;
+        int posicao = 0;
+        while(n!=fim) {
+            if(n.item.equals(item)) return posicao;
+            n = n.proximo;
+            posicao++;
+        }
+        return -1;
+    }
+    public String buscar(int posicao) {
+        //retorna o item armazenado nessa posicao
+        //se a posicao nao existir retorna null
+        return null;
+    }
+    public void esvaziarLista() {
+        //
+    }
+
     @Override
     public String toString() {
      //  Maria Carla

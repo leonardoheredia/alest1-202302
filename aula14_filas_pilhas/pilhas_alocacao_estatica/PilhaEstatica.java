@@ -1,4 +1,4 @@
-package aula_14_filas_pilhas.pilhas_alocacao_estatica;
+package aula14_filas_pilhas.pilhas_alocacao_estatica;
 
 public class PilhaEstatica {
     private static final int CAPACIDADE_DEFAULT = 5;

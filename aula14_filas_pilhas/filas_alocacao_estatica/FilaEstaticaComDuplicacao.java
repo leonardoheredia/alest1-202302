@@ -1,6 +1,6 @@
-package aula_14_filas_pilhas.filas_alocacao_estatica;
+package aula14_filas_pilhas.filas_alocacao_estatica;
 
-public class FilaEstaticaCircular {
+public class FilaEstaticaComDuplicacao {
 
     private static final int CAPACIDADE_INICIAL = 6;
     private String[] itens;
@@ -9,23 +9,30 @@ public class FilaEstaticaCircular {
     private int inicio;
     private int fim;
 
-    public FilaEstaticaCircular() {
+    public FilaEstaticaComDuplicacao() {
         this.capacidade = CAPACIDADE_INICIAL;
         this.itens = new String[this.capacidade];
+
         this.quantidade = 0;
         this.inicio = 0;
         this.fim = -1;
     }
 
+    private void duplicar() {
+        int novaCapacidade = this.capacidade * 2;
+        String[] itensAux = new String[novaCapacidade];
+        for (int i = 0; i < this.capacidade; i++) {
+            itensAux[i] = this.itens[i];
+        }
+        this.capacidade = novaCapacidade;
+        this.itens = itensAux;
+    }
     public void enfileirar(String item) {
-        if(this.estaLotada()) {
-            System.out.println("Sinto muito, a fila está lotada");
-            return;
+        if(this.fim+1 == capacidade) {
+            System.out.println("Duplicando o array");
+            duplicar();
         }
         int posicao = this.fim+1;
-        if(posicao==capacidade) { //chegou ao final do array mas ainda tem espaco pois a final nao esta lotada, entao circular
-            posicao = 0;
-        }
         this.itens[posicao] = item;
         this.fim = posicao;
         this.quantidade++;
@@ -38,9 +45,6 @@ public class FilaEstaticaCircular {
         }
         String retorno = itens[this.inicio];
         itens[this.inicio] = null;
-        if(this.inicio+1==capacidade) { //o inicio tentou mover alem da capacidade, siginifica que tiramos o ultimo e entao o inicio volta a ser 0
-            this.inicio = -1;
-        }
         this.inicio++;
         this.quantidade--;
         if(this.estaVazia()) {
@@ -73,12 +77,9 @@ public class FilaEstaticaCircular {
         return this.quantidade==0;
     }
 
-    public boolean estaLotada() {
-        return this.quantidade == this.capacidade;
-    }
 
     public static void main(String[] args) {
-        FilaEstaticaCircular minhaFila = new FilaEstaticaCircular();
+        FilaEstaticaComDuplicacao minhaFila = new FilaEstaticaComDuplicacao();
         System.out.println(minhaFila);
 
         minhaFila.enfileirar("Alexandre");

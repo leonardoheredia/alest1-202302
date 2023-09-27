@@ -11,7 +11,6 @@ public class AppLista {
         ls.adicionar("mariana");
         ls.adicionar("tales");
         ls.adicionar("alexandre");
-
         System.out.println(ls);
 
         ls.remover(0);

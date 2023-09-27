@@ -1,4 +1,4 @@
-package aula_14_filas_pilhas.filas_alocacao_estatica;
+package aula14_filas_pilhas.filas_alocacao_estatica;
 
 public class FilaEstatica {
 
