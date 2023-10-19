@@ -27,14 +27,35 @@ public class ArvoreGenerica {
     public ArvoreGenerica(String item) {
         Nodo n = new Nodo(item);
         raiz = n;
+        tamanho++;
     }
     public void adicionarNodo(String item, String pai) {
         Nodo nodoPai = pesquisarNodo(pai, raiz);
-        Nodo nodoFilho = new Nodo(item);
-        nodoPai.adicionarFilho(nodoFilho);
+        if(nodoPai!=null) {
+            Nodo nodoFilho = new Nodo(item);
+            nodoPai.adicionarFilho(nodoFilho);
+            tamanho++;
+        }
+        else {
+            System.out.println("NAO FOI POSSIVEL INSERIR");
+        }
     }
     public boolean existe(String item) {
         return pesquisarNodo(item, raiz)!=null;
+    }
+    public void percorrer() {
+        System.out.println("");
+        percorrerRecursivo(raiz);
+    }
+    private void percorrerRecursivo(Nodo n) {
+        if(n!=null) {
+            if(n.quantidadeFilhos>0) {
+                for (int i = 0; i < n.quantidadeFilhos; i++) {
+                    percorrerRecursivo(n.filhos[i]);
+                };
+            }
+            System.out.printf(n.item + " ");
+        }
     }
     private Nodo pesquisarNodo(String item, Nodo n) {
         if(n.item.equals(item)) return n;
