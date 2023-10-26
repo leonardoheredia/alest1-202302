@@ -11,4 +11,6 @@ public class NotaFiscal {
     private String cidade;
     private String estado;
     private ListaItemNotaFiscal itens;
+    public NotaFiscal proximo;
+    public NotaFiscal anterior;
 }
