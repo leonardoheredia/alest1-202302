@@ -9,23 +9,6 @@ import java.util.Scanner;
 
 public class AppTeste {
     public static void main(String[] args) throws IOException {
-        ItemNotaFiscal item1 = new ItemNotaFiscal(
-                "1",
-                "pizza",
-                3,
-                11.98);
-
-        ItemNotaFiscal item2 = new ItemNotaFiscal(
-                "2",
-                "xis bacon",
-                9,
-                72.52);
-/*
-        ListaItemNotaFiscal minhaLista = new ListaItemNotaFiscal();
-        minhaLista.adicionar(item1);
-        minhaLista.adicionar(item2);
-        System.out.println(minhaLista);
-*/
         lerArquivo();
     }
 
@@ -33,6 +16,7 @@ public class AppTeste {
         String linha;
         String arquivo = "C:\\TEMP\\notas_fiscais_00500.csv";
         BufferedReader leitor = new BufferedReader(new FileReader(arquivo));
+        ListaNotaFiscal exemploListaNF = new ListaNotaFiscal();
         try {
             System.out.println(leitor.readLine()); //pula a primeira linha do cabecalho
             linha = leitor.readLine();
@@ -41,6 +25,7 @@ public class AppTeste {
             String notaAnterior = notaAtual;
             NotaFiscal nf = new NotaFiscal();
             nf.setNumero(colunas[0]);
+            exemploListaNF.adicionar(nf);
             nf.setData(Date.valueOf(colunas[1]));
             nf.setCliente(colunas[2]);
             ListaItemNotaFiscal items = new ListaItemNotaFiscal();
@@ -51,6 +36,7 @@ public class AppTeste {
                 if(!notaAnterior.equals(notaAtual)) {
                     nf = new NotaFiscal();
                     nf.setNumero(colunas[0]);
+                    exemploListaNF.adicionar(nf);
                     nf.setData(Date.valueOf(colunas[1]));
                     nf.setCliente(colunas[2]);
                     items = new ListaItemNotaFiscal();
